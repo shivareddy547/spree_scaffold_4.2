@@ -1,0 +1,10 @@
+<%% content_for :page_title do %>
+  <%%= Spree.t(:editing_resource, resource: Spree::<%= class_name %>.model_name.human) %>
+  <span class="green">"<%%= @<%= singular_name %>.<%= attributes.first.name %> %>"</span>
+<%% end %>
+
+<%% content_for :page_actions do %>
+  <%%= button_link_to Spree.t(:back_to_resource_list, resource: Spree::<%= class_name %>.model_name.human), spree.admin_<%= plural_name %>_path, class: 'btn-primary', icon: 'arrow-left' %>
+<%% end %>
+
+<%%= render 'form' %>
